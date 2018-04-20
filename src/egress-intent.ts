@@ -22,6 +22,7 @@ export default class EgressIntent {
 		aggressive: false,
 		timer: 1000,
 		delay: 0,
+		cookieExpire: 1,
 		cookieDomain: '',
 		cookieName: 'triggeredEI',
 		target: document.documentElement,
@@ -56,7 +57,7 @@ export default class EgressIntent {
 			);
 
 		this.config.target.removeEventListener('mouseleave', this.handleMouseLeave);
-		this.config.target.removeEventListener('mousenter', this.handleMouseEnter);
+		this.config.target.removeEventListener('mouseenter', this.handleMouseEnter);
 	}
 
 	private attachListeners = (): void => {
