@@ -1,7 +1,7 @@
 # EgressIntent
-> OuiBounc originally created by [Carl Sednaoui](http://carlsednaoui.com/about) from [MailCharts](http://www.mailcharts.com/). Ported to TypeScript and adapted into EgressIntent by [Sean Bennett](https://swbennett.com).
+> OuiBounce originally created by [Carl Sednaoui](http://carlsednaoui.com/about) from [MailCharts](http://www.mailcharts.com/). Ported to TypeScript and adapted into EgressIntent by [Sean Bennett](https://swbennett.com).
 
-EgressIntent offers a simple interface to execute code as the user's cursor exits a given area, with the added functionality of limiting the number of times this can occur over a given period of time by setting a cookie. As a million other things use the name 'EgressIntent', the name may be subject to change.
+EgressIntent offers a simple interface to execute code as the user's cursor exits a given area, with the added functionality of limiting the number of times this can occur over a given period of time by setting a cookie.
 
 An adaptation of the [OuiBounce](https://github.com/carlsednaoui/ouibounce) library from [Carl Sednaoui](http://carlsednaoui.com/about) and other contributors, it has diverged from the original library:
 * EgressIntent eschews the original library's style attribute modification of a given "modal" element on exit trigger, instead leaving the exact code to execute up to the developer.
