@@ -5,7 +5,6 @@ EgressIntent offers a simple interface to execute code as the user's cursor exit
 
 An adaptation of the [OuiBounce](https://github.com/carlsednaoui/ouibounce) library from [Carl Sednaoui](http://carlsednaoui.com/about) and other contributors, it has diverged from the original library:
 * EgressIntent eschews the original library's style attribute modification of a given "modal" element on exit trigger, instead leaving the exact code to execute up to the developer.
-* EgressIntent allows the developer to specify an element to use as the bounds to be exited from, rather than being hardcoded to act on the `<body>` element. As such, OuiBounce's _sensitivity_ configuration option has been left out.
 
 ## Installation
 
@@ -52,7 +51,8 @@ trigger.disable();
 | cookieName | `string` | `'triggeredEI'` | If desired, override the default cookie name. |
 | sitewide | `boolean` | `false` | If `true`, the cookie will apply to every page of the site rather than only that which the user triggered the code to be fired. |
 | target | `HTMLElement` | `document.documentElement` | The element that defines the boundaries of the exit. |
-| directions | `string|string[]` | `['top', 'right', 'bottom', 'left']` | The exit directions that will trigger the callback. |
+| sensitivity | `number` | `20` | How far the mouse must be from the edge. |
+| directions | `string&#124;string[]` | `['top', 'right', 'bottom', 'left']` | The exit directions that will trigger the callback. |
 
 When manually calling the `disable()` method on the class, custom cookie options (_cookieExpire_, _cookieDomain_, _cookieName_, and _sitewide_) can be specified that override those set when the class was instantiated:
 
