@@ -8,9 +8,7 @@ An adaptation of the [OuiBounce](https://github.com/carlsednaoui/ouibounce) libr
 
 ## Installation
 
-As there is no NPM package, it is necessary to do one of the following:
-1. Copy _egress-intent.js_ from _dist/_ or _egress-intent.ts_ from _src/_ into your scripts folder
-2. Run `npm install https://github.com/SWBennett06/EgressIntent.git`
+Simply run `npm install egress-intent`.
 
 ## Usage
 
