@@ -52,6 +52,7 @@ trigger.disable();
 | cookieName | `string` | `'triggeredEI'` | If desired, override the default cookie name. |
 | sitewide | `boolean` | `false` | If `true`, the cookie will apply to every page of the site rather than only that which the user triggered the code to be fired. |
 | target | `HTMLElement` | `document.documentElement` | The element that defines the boundaries of the exit. |
+| directions | `string|string[]` | `['top', 'right', 'bottom', 'left']` | The exit directions that will trigger the callback. |
 
 When manually calling the `disable()` method on the class, custom cookie options (_cookieExpire_, _cookieDomain_, _cookieName_, and _sitewide_) can be specified that override those set when the class was instantiated:
 
