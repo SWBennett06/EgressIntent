@@ -1,6 +1,6 @@
 {
   "name": "egress-intent",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "main": "dist/egress-intent.js",
   "types": "dist/egress-intent",
   "author": "Sean Bennett",

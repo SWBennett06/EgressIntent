@@ -2,12 +2,14 @@ export interface EgressIntentOptions {
 	aggressive?: boolean;
 	timer?: number;
 	delay?: number;
-	callback: Function;
+	callback: () => any;
 	cookieExpire?: number;
 	cookieDomain?: string;
 	cookieName?: string;
 	sitewide?: boolean;
 	target?: HTMLElement;
+	directions?: string|string[];
+	sensitivity?: number;
 }
 
 export interface EgressIntentDisableOptions {
@@ -26,6 +28,8 @@ export default class EgressIntent {
 		cookieDomain: '',
 		cookieName: 'triggeredEI',
 		target: document.documentElement,
+		sensitivity: 20,
+		directions: ['top', 'right', 'bottom', 'left'],
 		callback: function(): void {}
 	};
 	private config: EgressIntentOptions;
@@ -103,6 +107,23 @@ export default class EgressIntent {
 	}
 
 	private handleMouseLeave = (event: MouseEvent) => {
+		let sensitivityTests: boolean[] = [];
+		if (this.config.directions.indexOf('top') > -1) {
+			sensitivityTests.push(event.clientY < this.config.sensitivity);
+		}
+		if (this.config.directions.indexOf('right') > -1) {
+			sensitivityTests.push(event.clientX > window.innerWidth - this.config.sensitivity);
+		}
+		if (this.config.directions.indexOf('bottom') > -1) {
+			sensitivityTests.push(event.clientY > window.innerHeight - this.config.sensitivity);
+		}
+		if (this.config.directions.indexOf('left') > -1) {
+			sensitivityTests.push(event.clientX < this.config.sensitivity);
+		}
+
+		if (!sensitivityTests.reduce((acc, curr) => acc || curr))
+			return;
+
 		this.delayTimer = setTimeout(this.fire, this.config.delay);
 	}
 	private handleMouseEnter = (event: MouseEvent) => {
