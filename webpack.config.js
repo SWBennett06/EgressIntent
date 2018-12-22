@@ -1,22 +1,16 @@
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-	mode: 'development',
-	entry: './src/egress-intent.ts',
-	plugins: [ new CleanWebpackPlugin() ],
+	entry: './src/EgressIntent.ts',
 	output: {
 		library: 'EgressIntent',
 		libraryTarget: 'umd',
-		filename: 'egress-intent.js',
+		filename: 'EgressIntent.js',
 		path: path.resolve(__dirname, 'dist')
 	},
 	module: {
-		rules: [
-			{ test: /\.html$/, use: ['html-loader']},
-			{ test: /\.tsx?$/, use: ['ts-loader']}
-		]
+		rules: [{ test: /\.tsx?$/, use: ['ts-loader']}]
 	},
 	resolve: {
 		extensions: ['.ts', '.js']
